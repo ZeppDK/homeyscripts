@@ -1,0 +1,9 @@
+var current = new Date();
+var now = new Date().toLocaleTimeString('da-DK', { hour12: false, timeZone: (await Homey.system.getInfo()).timezone }).split('.')[0];
+var dennetime1 = parseInt(now);
+var detteminut1 = current.getMinutes();
+await tag("dennetime", Number(dennetime1));
+await tag("detteminut", Number(detteminut1));
+log(dennetime1);
+log(detteminut1);
+// log(current);
